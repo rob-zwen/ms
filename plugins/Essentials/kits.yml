@@ -1,0 +1,17 @@
+kits:
+  Débutant:
+    delay: 600
+    items:
+      - woodsword 1
+      - stonepickaxe 1
+      - woodaxe 1
+      - woodshovel 1
+      - bow 1
+      - arrow 64
+      - flint_and_steel
+      - torch 64
+      - bread 16
+      - leather_helmet 1
+      - leather_chestplate 1
+      - leather_leggings 1
+      - leather_boots 1

@@ -1,0 +1,7 @@
+&f>----&e----&6----&2----&3----&5----&4---->
+&r[&6&lWORLD&r] &r=> &a&l[MESSAGE]
+&fSalut &6{PLAYER}&f,
+&fTon solde est de &7{BALANCE}&f.
+&fIl est exactement &6{TIME}&f.
+&fNous sommes &6{ONLINE} joueur(s) en ligne&f.
+&f>----&e----&6----&2----&3----&5----&4---->

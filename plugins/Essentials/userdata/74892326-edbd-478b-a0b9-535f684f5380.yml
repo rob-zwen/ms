@@ -1,0 +1,32 @@
+lastAccountName: Kiamamana
+timestamps:
+  login: 1636231777229
+  logout: 1636232092120
+  lastteleport: 1636132969299
+  kits:
+    débutant: 1636132763150
+ipAddress: 192.168.24.7
+godmode: true
+logoutlocation:
+  world: world
+  x: 233.0429719407075
+  y: 63.0
+  z: 58.11459796962656
+  yaw: -1.4242554
+  pitch: -0.9277458
+lastlocation:
+  world: world_spawn
+  x: -1.2707114376916797
+  y: 13.5
+  z: 9.08201202689311
+  yaw: -177.51315
+  pitch: 3.2987385
+afk: false
+homes:
+  home:
+    world: world
+    x: -754.5089080296561
+    y: 13.0
+    z: 1287.4008510203291
+    yaw: -179.36555
+    pitch: 4.9884973

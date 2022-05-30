@@ -1,0 +1,8 @@
+spawns: 
+  default: 
+    world: world_spawn
+    x: 0.5
+    y: 13.0
+    z: 0.5
+    yaw: 0
+    pitch: 0

@@ -1,0 +1,345 @@
+config-version: 20
+
+settings:
+  language: French
+  auto-update: true
+  enable-api: true
+  use-internal-tps: true
+
+global-broadcasts:
+  enabled: true
+  async: false
+  use-permission-for-broadcasts: false
+  permission: bukkit.broadcast
+
+lag-spike-helper:
+  enabled: false
+  min-elapsed-time: 500
+  check-interval: 100
+  follow-stack: true
+
+hopper-limiter:
+  enabled: false
+  transfer-limit: 5
+  check-interval: 1
+
+ram-meter:
+  enabled: false
+  interval: 20
+  ram-limit: 5000
+  commands:
+    - 'lagg killmobs'
+    - 'lagg clear'
+
+halt-command:
+  remove-entities: true
+  disable-natural-entity-spawning: true
+  halted:
+    fire: true
+    fire-burn: true
+    explosion: true
+    decay: true
+    block-fade: true
+    block-form: true
+    block-spread: true
+    block-natural-change: true
+
+player-speed-limiter:
+  enabled: false
+  move-max-speed: 0.7
+  fly-max-speed: 0.8
+
+item-spawn-age-setter:
+  enabled: false
+  items:
+    stone: 240
+    grass: 240
+    cobblestone: 240
+    log: 240
+    stone_axe: 240
+    stone_pickaxe: 240
+    stone_sword: 240
+    wooden_axe: 240
+    wooden_pickaxe: 240
+    wooden_sword: 240
+    rotten_flesh: 240
+    gravel: 240
+    dirt: 240
+    leather: 200
+    sand: 240
+    bone: 240
+    beef: 240
+    chicken: 160
+    rabbit: 240
+    salmon: 240
+    cactus: 210
+    wool: 180
+    arrow: 160
+    PORKCHOP: 240
+    potato: 240
+    RED_TULIP: 240
+
+mob-breeding-limiter:
+  enabled: false
+  max-mobs: 6
+  check-radius: 15
+
+log-purger:
+  enabled: false
+  days-old: 3
+
+area-filter:
+  - Itemframe
+  - Minecart
+  - Wolf
+  - Villager
+  - Horse
+  - ARMOR_STAND
+
+config-updater:
+  force-update: false
+
+mobegg-limiter:
+  enabled: false
+  check-radius: 8
+  max-mobs: 5
+
+chunk-limiter:
+  enabled: false
+  limit: 6000
+  create-new-chunks: true
+
+mob-range:
+  enabled: false
+  zombie: 30
+  skeleton: 30
+  creeper: 20
+
+live-time:
+  enabled: false
+  interval: 10
+  mobtimer: true
+  itemtimer: true
+  arrowtimer: true
+  arrowkilltime: 15
+  moblivetime: 600
+  itemlivetime: 240
+
+tnt-minecart:
+  enabled: false
+  max: 2
+  radius: 6
+
+dispenser-reducer:
+  enabled: false
+  time: 100
+
+tnt-reducer:
+  enabled: false
+  check-radius: 5
+  max-primed: 3
+
+firespread-reducer:
+  enabled: false
+  time: 2000
+
+chunk-entity-limiter:
+  enabled: false
+  limit: 10
+  entities:
+    - Squid
+    - Zombie
+    - Skeleton
+    - Creeper
+    - Chicken
+    - Pig
+    - Sheep
+    - Cow
+    - Horse
+
+per-entity-chunk-entity-limiter:
+  enabled: false
+  entity-limits:
+    - Squid limit:1
+    - Zombie limit:2
+    - Skeleton limit:2
+    - Creeper limit:2
+    - Chicken limit:3
+    - Pig limit:5
+    - Sheep limit:5
+    - Cow limit:5
+    - Horse limit:3 !hasName
+    - Villager limit:4
+    - Arrow limit:4 inGround
+    - Rabbit limit:2
+    - PufferFish limit:2
+    - Silverfish limit:2
+    - TROPICAL_FISH limit:2
+    - COD limit:2
+    - DOLPHIN limit:2
+    - Bat limit:1
+    - Armorstand limit:10
+  passive-cleaner:
+    passive-cleaning-enabled: false
+    check-interval: 20
+    chunk-batch-size: 100
+
+spawn-limiter:
+  enabled: false
+  interval: 15
+  mobs: 300
+  animals: 300
+
+tps-meter:
+  enabled: false
+  trigger-broadcast-message: '&6[ClearLag] &cThe server is overloaded, executing lag-perventing measures'
+  recover-broadcast-message: '&6[ClearLag] &aThe server is no longer overloaded!'
+  broadcast-enabled: false
+  interval: 15
+  tps-trigger: 14.0
+  tps-recover: 19.0
+  commands:
+    - 'lagg killmobs'
+    - 'lagg clear'
+    - 'lagg halt on'
+  recover-commands:
+    - 'lagg halt off'
+
+kill-mobs:
+  remove-named: false
+  mob-filter:
+    - Villager
+    - Wolf
+    - ARMOR_STAND
+    - Horse
+
+mobspawner:
+  enabled: false
+  max-spawn: 4
+  remove-mobs-on-chunk-unload: true
+
+item-merger:
+  enabled: false
+  radius: 6
+
+auto-removal:
+  enabled: true
+  broadcast-message: '&6[ClearLag] &aRemoved +RemoveAmount Entities!'
+  broadcast-removal: true
+  autoremoval-interval: 460
+  world-filter:
+    - world_survival
+  boat: true
+  falling-block: true
+  experience-orb: true
+  painting: false
+  projectile: true
+  item: true
+  itemframe: false
+  minecart: true
+  primed-tnt: true
+  item-filter:
+  # - Stone <-This item-id will be ignored during removal!
+  # - Grass
+  remove-entities: []
+  # - cow <- This mob-type will be REMOVED during removal!
+  # - MINECART_MOB_SPAWNER
+  # - Pig liveTime=100 <- This mob will be REMOVED if it's been alive for 100 ticks (5 seconds)
+  # - Minecart !isMounted <- This entity will be REMOVED if it's NOT mounted
+  # - Wolf !hasName <- This entity will be REMOVED if it doesn't have a name
+  warnings:
+    - 'time:400 msg:&4[ClearLag] &cWarning Ground items will be removed in &7+remaining &cseconds!'
+    - 'time:440 msg:&4[ClearLag] &cWarning Ground items will be removed in &7+remaining &cseconds!'
+
+command-remove:
+  world-filter:
+  # - this_world <-This world will be ignored during removal!
+  broadcast-removal: false
+  boat: true
+  falling-block: true
+  experience-orb: true
+  painting: false
+  projectile: true
+  item: true
+  itemframe: false
+  minecart: true
+  primed-tnt: true
+  item-filter:
+  # - Stone <-This item-id will be ignored during removal!
+  # - Grass
+  remove-entities:
+  # - cow <- This mob-type will be REMOVED during removal!
+  # - MINECART_MOB_SPAWNER
+  # - Pig liveTime=100 <- This mob will be REMOVED if it's been alive for 100 ticks (5 seconds)
+  # - Minecart !isMounted <- This entity will be REMOVED if it's NOT mounted
+  # - Wolf !hasName <- This entity will be REMOVED if it doesn't have a name
+
+limit:
+  enabled: false
+  max: 1000
+  check-interval: 60
+  broadcast-message: '&6[ClearLag] &aLimit reached, removed +RemoveAmount Entities!'
+  world-filter:
+  # - this_world <-This world will be ignored during removal!
+  broadcast-removal: true
+  boat: true
+  falling-block: true
+  experience-orb: true
+  painting: false
+  projectile: true
+  item: true
+  itemframe: false
+  minecart: true
+  primed-tnt: true
+  item-filter:
+  # - Stone
+  # - Grass <-This item-id will be ignored during removal!
+
+custom-trigger-removal:
+  enabled: false
+  triggers:
+    trigger1:
+      trigger-type: tps-trigger
+      run-interval: 5
+      tps-trigger: 14.0
+      tps-recover: 19.0
+      jobs:
+        command-executor:
+          commands:
+            - 'lagg killmobs'
+            - 'lagg clear'
+            - 'lagg halt'
+          recover-commands:
+            - 'lagg halt'
+        entity-clearer:
+          execute-job-time: 120
+          warnings:
+            - 'time:60 msg:&4[ClearLag] &cEntities/drops will be purged in &7+remaining &cseconds!'
+            - 'time:100 msg:&4[ClearLag] &cEntities/drops will be purged in &720 &cseconds!'
+            - 'time:110 msg:&4[ClearLag] &cEntities/drops will be purged in &710 &cseconds!'
+          world-filter:
+          # - world <-This world will be ignored during removal
+          removeEntities:
+            - item
+            - zombie !hasName
+            - skeleton !hasName
+            - pig !hasName
+            - cow !hasName
+    trigger2:
+      trigger-type: entity-limit-trigger
+      run-interval: 25
+      limit: 200
+      world-filter:
+        # - world <-This world will be ignored during checking
+      entity-limits:
+        - zombie
+        - skeleton
+        - enderman
+      jobs:
+        entity-clearer:
+          world-filter:
+          # - world <-This world will be ignored during removal
+          remove-entities:
+            - zombie
+            - skeleton
+            - enderman
